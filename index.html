@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreatStars</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* Стили для главной страницы */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: url('https://images.unsplash.com/photo-1504198266280-5b0e4a3f7c1c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  color: #fff;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3, .card p {
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Стили для секции ACT */
+.act {
+  background: rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 40px 0;
+  color: #fff;
+}
+
+.act h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.act-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.act-content img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.act-text {
+  flex: 1 1 300px;
+  line-height: 1.6;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .act-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .act-text {
+    max-height: none;
+  }
+}
+
+@media(max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<header class="header container">
+  <div class="logo">GreatStars</div>
+  <nav class="nav">
+    <a href="index.html" data-i18n="menu_home"></a>
+    <a href="races.html" data-i18n="menu_races"></a>
+    <a href="galaxies.html" data-i18n="menu_galaxies"></a>
+    <a href="gallery.html" data-i18n="menu_gallery"></a>
+    <a href="lore.html" data-i18n="menu_lore"></a>
+    <a href="contacts.html" data-i18n="menu_contacts"></a>
+  </nav>
+  <div class="lang">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ja')">JA</button>
+  </div>
+</header>
+
+<section class="hero container">
+  <h1 data-i18n="hero_title">Добро пожаловать в GreatStars</h1>
+  <p data-i18n="hero_text">Исследуй инопланетные расы, галактики и тайны космоса.</p>
+</section>
+
+<section class="cards container">
+  <div class="card">
+    <img src="assets/images/1.jfif" alt="" data-i18n-alt="card_races">
+    <h3 data-i18n="card_races">Инопланетные расы</h3>
+    <p data-i18n="card_races_text">Изучи удивительные цивилизации далеких миров и их культуру.</p>
+  </div>
+  <div class="card">
+    <img src="assets/images/2.jfif" alt="" data-i18n-alt="card_galaxies">
+    <h3 data-i18n="card_galaxies">Галактики</h3>
+    <p data-i18n="card_galaxies_text">Путешествуй по галактикам и открывай новые звездные системы.</p>
+  </div>
+  <div class="card">
+    <img src="assets/images/3.jfif" alt="" data-i18n-alt="card_lore">
+    <h3 data-i18n="card_lore">Лор и история</h3>
+    <p data-i18n="card_lore_text">Погрузись в легенды, мифы и историю космоса.</p>
+  </div>
+</section>
+
+<!-- Секция ACT -->
+<section class="act container">
+  <h2 data-i18n="act_title">АКТ</h2>
+  <div class="act-content">
+    <img src="assets/images/4.jfif" alt="" data-i18n-alt="act_title">
+    <div class="act-text" data-i18n="act_text">
+<b>Бесрочного формирования галактики Liora Aeterna в структуре Млечного Пути</b>
+
+---
+
+I. Общие положения
+
+Настоящий Акт закрепляет концепцию формирования и беспрерывного существования галактики Liora Aeterna в пределах Млечного Пути, начиная с 22 декабря 2025 года, и действующий бесрочно.
+
+Акт является авторским и философско-научным документом и не нарушает международного космического права.
+
+---
+
+II. Создатель и правообладатель
+
+Создатель и правообладатель концепции:
+Соломыкин Геннадий Геннадьевич
+
+Права распространяются на:
+
+- текстовые описания,
+- схемы, чертежи и визуальные образы,
+- архитектурные модели галактики,
+- философскую и художественно-научную концепцию.
+
+> Любое использование без согласия автора считается нарушением прав интеллектуальной собственности.
+
+---
+
+III. Структура галактики
+
+1. Центральное ядро  
+Солнце-Ядро — центр галактики, источник гравитации и света.
+
+2. Орбитальная система  
+15 орбит, каждая устойчиво вращается вокруг центрального Солнца.  
+На каждой орбите: 15 объектов: 14 планет, землеподобных, с жизненным циклом, идентичным Земле, и 1 Солнце (малое, дополнительное), создающее энергетический баланс.  
+Общая конфигурация: 15×15 объектов.
+
+3. Парадная конфигурация  
+В определённые моменты все планеты выстраиваются в 15 направлений парадов, проходящих через центральное Солнце.  
+Каждое новое парадное выстраивание планет происходит каждые 15 лет, начиная с 22 декабря 2025 года.  
+Это обеспечивает гармоничную синхронизацию орбит, энергетическое равновесие и стабильность биологических циклов.
+
+---
+
+IV. Жизненные и энергетические стандарты
+
+- Атмосфера всех планет совместима между собой.  
+- Биологические циклы идентичны земным.  
+- Энергетическая система: центральное Солнце + 15 орбитальных Солнц.  
+- Планеты находятся в устойчивом гравитационном и световом балансе.
+
+---
+
+V. Защитные положения
+
+1. Авторское право: концепция, схемы и образы защищены как интеллектуальная собственность.  
+2. Запрет на присвоение: любое присвоение авторства запрещено.  
+3. Запрет на искажение: любое изменение архитектурной и жизненной логики без согласия автора не допускается.
+
+---
+
+VI. Бесрочность действия
+
+Настоящий Акт действует бесконечно, пока существует концепция галактики.  
+Любые модификации в рамках проекта только с согласия создателя.  
+
+---
+
+VII. Инициаторы проекта
+
+Создатель-конструктор: Соломыкин Геннадий Геннадьевич.  
+Совет Изначального Света: концептуальные уровни баланса, наблюдателя и хранителя жизни.  
+Ответственность за сохранение гармонии и соблюдение стандартов проекта.
+
+---
+
+VIII. Заключение
+
+Галактика Liora Aeterna — это проект гармонии, жизни и устойчивости, а её создатель обладает авторским и концептуальным правом на весь комплекс идей, схем и образов.
+
+> Данный Акт является бесрочным, с фиксированной датой начала действия 22 декабря 2025 года и закреплением циклов парадов каждые 15 лет, и окончательным закреплением концепции.
+
+---
+
+ЗАКРЫТЫЙ АКТ-ДОГОВОР  
+ВНЕЮРИСДИКЦИОННОГО ТИПА  
+Код доступа: GreatStars
+
+---
+
+Преамбула (скрытый уровень)  
+Настоящий Акт не создаётся, а обнаруживается.  
+Он не утверждается, а распознаётся.  
+Он не вступает в силу, а присутствует.  
+Данный Акт-договор существует вне пространства планеты Земля, вне её времени, вне её законов и вне любых систем фиксации, контроля и интерпретации.
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

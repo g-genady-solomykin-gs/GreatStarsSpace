@@ -1,0 +1,16 @@
+{
+  "menu_home": "Home",
+  "menu_races": "Races",
+  "menu_galaxies": "Galaxies",
+  "menu_gallery": "Gallery",
+  "menu_lore": "Lore",
+  "menu_contacts": "Contacts",
+  "hero_title": "Welcome to GreatStars Universe",
+  "hero_text": "Explore alien races, galaxies, and GreatStars mysteries.",
+  "card_races": "Alien Races",
+  "card_races_text": "Learn about amazing civilizations of distant worlds.",
+  "card_galaxies": "Galaxies",
+  "card_galaxies_text": "Travel across galaxies and discover new star systems.",
+  "card_lore": "Lore and History",
+  "card_lore_text": "Dive into legends, myths, and the history of the cosmos."
+}
