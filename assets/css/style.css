@@ -252,6 +252,7 @@ img {
   .act-text {
     max-height: 260px;
     padding: 14px;
+    margin-top: 10px;
     overflow-x: hidden;
   }
 }
