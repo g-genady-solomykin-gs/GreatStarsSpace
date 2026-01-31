@@ -261,7 +261,7 @@ img {
 section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 16px;
+      padding: 25px 15px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
