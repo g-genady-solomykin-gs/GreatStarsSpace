@@ -5,6 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GreatStars</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById('update-popup');
+    const closeBtn = document.getElementById('close-popup');
+
+    // 1. Получаем текущее количество просмотров из локального хранилища
+    // Если ключа нет, ставим 0
+    let viewCount = parseInt(localStorage.getItem('update_popup_views')) || 0;
+
+    // 2. Условие: показываем, только если пользователь видел попап меньше 2 раз
+    if (viewCount < 2) {
+        setTimeout(() => {
+            popup.classList.add('active');
+        }, 1000); // Плавная задержка 1 сек
+    }
+
+    // 3. Обработка клика по кнопке
+    closeBtn.addEventListener('click', () => {
+        popup.classList.remove('active');
+        
+        // Увеличиваем счетчик на 1
+        viewCount++;
+        
+        // Сохраняем обновленное число в память браузера
+        localStorage.setItem('update_popup_views', viewCount.toString());
+        
+        console.log(`Пользователь ознакомлен. Просмотров: ${viewCount}/2`);
+    });
+});
+</script>
 
 </head>
 <body>
@@ -25,12 +58,12 @@
   </div>
 </header>
 
-<section class="hero container">
+<section class="act hero container">
   <h1 data-i18n="hero_title">Добро пожаловать в GreatStars</h1>
   <p data-i18n="hero_text">Исследуй инопланетные расы, галактики и тайны космоса.</p>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 АКТ-АРТИФАКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_10.jpeg" alt="" data-i18n-alt="udv">
@@ -131,7 +164,7 @@
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВсеВселенский Акт-Меморандум-Артефакт</h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion1.jpeg" alt="" data-i18n-alt="udv">
@@ -246,44 +279,42 @@
   </div>
 </section>
 
-
-
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜</h2>
   <div class="act-content">
     <img src="assets/images/super_img/no_txt_1.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜</h2>
   <div class="act-content">
     <img src="assets/images/super_img/no_txt_2.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ЕДИНЫЙ ВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_5.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ЕДИНЫЙ ВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_6.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ЕДИНЫЙ ВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/no_txt_4.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ЕДИНЫЙ ВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/no_txt_3.jpeg" alt="" data-i18n-alt="udv">
@@ -292,7 +323,7 @@
 
 <!-- ---------sdfsd -->
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВЕЛИКОЕ ПОСЛАНИЕ ОСНОВАТЕЛЯ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_9jpeg" alt="" data-i18n-alt="udv">
@@ -378,7 +409,7 @@
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВЕЛИКИЙ АКТ И ЗАКОН ВЛАДЕНИЯ ТЕРРИТОРИЕЙ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_8.jpeg" alt="" data-i18n-alt="udv">
@@ -547,7 +578,7 @@
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВЕЛИКИЙ ВСЕВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_7.jpeg" alt="" data-i18n-alt="udv">
@@ -687,7 +718,7 @@
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ЕДИНЫЙ ВСЕЛЕНСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_1.jpeg" alt="" data-i18n-alt="udv">
@@ -884,7 +915,7 @@ XXI век
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВСЕВСЕЛЕНСКИЙ ДЕКЛАРАЦИОННЫЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_2.jpeg" alt="" data-i18n-alt="udv">
@@ -993,7 +1024,7 @@ VI. Подтверждение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ВСЕЛЕНСКИЙ АКТ-АРТЕФАКТ</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_3.jpeg" alt="" data-i18n-alt="udv">
@@ -1080,7 +1111,7 @@ VI. Подтверждение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 АКТ СОЗДАНИЯ НАЦИИ «ЛЮДИ» Военная Нация</h2>
   <div class="act-content">
     <img src="assets/images/super_img/yes_txt_4.jpeg" alt="" data-i18n-alt="udv">
@@ -1197,10 +1228,9 @@ VI. Философская и научная цель, военная страт
 </section>
 
 
-
 <!-- sdfsdfsfsfsfs-e -->
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion2.jpeg" alt="" data-i18n-alt="udv">
@@ -1299,7 +1329,7 @@ VII. Статус
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion3.jpeg" alt="" data-i18n-alt="udv">
@@ -1374,35 +1404,35 @@ VII. Статус
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion4.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion5.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion6.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title"></h2>
   <div class="act-content">
     <img src="assets/images/New_21/lion7.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">ВСЕВСЕЛЕНСКОЕ ПРАВИТЕЛЬСТВО ГОСУДАРСТВА КОСМОСАВ КАНТОРЫ ТСОПГ GREATSTARS </h2>
   <div class="act-content">
     <img src="assets/images/New_21/osibii.jpeg" alt="" data-i18n-alt="udv">
@@ -1412,7 +1442,7 @@ VII. Статус
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">📜 ОСОБЫЙ ГАЛАКТИЧЕСКИЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/New_21/contor.jpeg" alt="" data-i18n-alt="udv">
@@ -1569,7 +1599,7 @@ XXI век
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">АКТ ОСОБОЙ ВАЖНОСТИ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/24.02.2026.jpeg" alt="" data-i18n-alt="udv">
@@ -1612,14 +1642,14 @@ XXI век
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">20 лет развития этого проекта жизнь</h2>
   <div class="act-content">
     <img src="assets/images/New_img/clendar.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">МЕЖДУНАРОДНАЯ КОСМИЧЕСКАЯ ДЕКЛАРАЦИЯ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/vek1.jpeg" alt="" data-i18n-alt="udv">
@@ -1821,14 +1851,14 @@ GS
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">ПАСПОРТ ДЕКЛАРАЦИЯ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/vek2.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">ДЕКЛАРАЦИЯ СВОЕГО ПУТИ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/fil_1112.jfif" alt="" data-i18n-alt="udv">
@@ -1961,7 +1991,7 @@ GreatStars действует полностью самостоятельно.
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">500 миллонов жителей</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im_million_sity.jpeg" alt="" data-i18n-alt="udv">
@@ -2034,7 +2064,7 @@ GreatStars действует полностью самостоятельно.
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">Золотые города космоса</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im_million_sity_2.jpeg" alt="" data-i18n-alt="udv">
@@ -2107,7 +2137,7 @@ GreatStars действует полностью самостоятельно.
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">ЗОЛОТОЙ ГОРОД</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im_million_sity_3.jpeg" alt="" data-i18n-alt="udv">
@@ -2223,7 +2253,7 @@ GreatStars действует полностью самостоятельно.
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">Твоя алхимическая система</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im1.jpeg" alt="" data-i18n-alt="udv">
@@ -2336,21 +2366,21 @@ GreatStars действует полностью самостоятельно.
 
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">АКТ О ЗАЩИТЕ И ОХРАНЕ ЗНАЙНИЙ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im2.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title" class="gold-title">Единая карта познания</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_im3.jpeg" alt="" data-i18n-alt="udv">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Обращение к UapoHost Co., Ltd.</h2>
   <div class="act-content">
     <img src="assets/images/New_img/ллолоо.jpg" alt="" data-i18n-alt="udv">
@@ -2388,7 +2418,7 @@ GreatStars действует полностью самостоятельно.
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Паспорт</h2>
   <div class="act-content">
     <img src="assets/images/New_img/udv.jpg" alt="" data-i18n-alt="udv">
@@ -2402,7 +2432,7 @@ GreatStars действует полностью самостоятельно.
 </section>
 
 <!-- Секция ACT -->
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 1</h2>
   <div class="act-content">
     <img src="assets/images/image-6.jpeg" alt="" data-i18n-alt="act_title">
@@ -2506,7 +2536,7 @@ III. Участие Царствий и Высших Сил
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 2</h2>
   <div class="act-content">
     <img src="assets/images/image-7.jpeg" alt="" data-i18n-alt="act_title">
@@ -2647,7 +2677,7 @@ III. Участие Царствий и Высших Сил
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 3</h2>
   <div class="act-content">
     <img src="assets/images/image-7.jpeg" alt="" data-i18n-alt="act_title">
@@ -2796,7 +2826,7 @@ III. Участие Царствий и Высших Сил
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 4</h2>
   <div class="act-content">
     <img src="assets/images/image-8.jpeg" alt="" data-i18n-alt="act_title">
@@ -3031,7 +3061,7 @@ XIII. Заключительная формула
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 5</h2>
   <div class="act-content">
     <img src="assets/images/image-9.jpeg" alt="" data-i18n-alt="act_title">
@@ -3220,7 +3250,7 @@ XIII. Заключительная формула
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 6</h2>
   <div class="act-content">
     <img src="assets/images/image-10.jpeg" alt="" data-i18n-alt="act_title">
@@ -3269,7 +3299,7 @@ GreatStars — это единая надгалактическая архите
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 7</h2>
   <div class="act-content">
     <img src="assets/images/image-11.jpeg" alt="" data-i18n-alt="act_title">
@@ -3438,7 +3468,7 @@ VIII. Заключение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 8</h2>
   <div class="act-content">
     <img src="assets/images/image-12.jpeg" alt="" data-i18n-alt="act_title">
@@ -3448,7 +3478,7 @@ VIII. Заключение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 8</h2>
   <div class="act-content">
     <img src="assets/images/image-13.jpeg" alt="" data-i18n-alt="act_title">
@@ -3588,28 +3618,28 @@ VIII. Заключение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 9</h2>
   <div class="act-content">
     <img src="assets/images/image-14.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 10</h2>
   <div class="act-content">
     <img src="assets/images/image-15.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 11</h2>
   <div class="act-content">
     <img src="assets/images/image-16.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 12</h2>
   <div class="act-content">
     <img src="assets/images/image-17.jpeg" alt="" data-i18n-alt="act_title">
@@ -3617,7 +3647,7 @@ VIII. Заключение
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 13</h2>
   <div class="act-content">
     <img src="assets/images/image-16.jpeg" alt="" data-i18n-alt="act_title">
@@ -3625,7 +3655,7 @@ VIII. Заключение
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 14</h2>
   <div class="act-content">
     <img src="assets/images/image-17.jpeg" alt="" data-i18n-alt="act_title">
@@ -3633,7 +3663,7 @@ VIII. Заключение
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 15</h2>
   <div class="act-content">
     <img src="assets/images/image-16.jpeg" alt="" data-i18n-alt="act_title">
@@ -3641,7 +3671,7 @@ VIII. Заключение
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 16</h2>
   <div class="act-content">
     <img src="assets/images/image-17.jpeg" alt="" data-i18n-alt="act_title">
@@ -3649,89 +3679,89 @@ VIII. Заключение
 </section>
 
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 17</h2>
   <div class="act-content">
     <img src="assets/images/image-18.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 18</h2>
   <div class="act-content">
     <img src="assets/images/image-19.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 19</h2>
   <div class="act-content">
     <img src="assets/images/image-20.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 20</h2>
   <div class="act-content">
     <img src="assets/images/image-21.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 21</h2>
   <div class="act-content">
     <img src="assets/images/image-22.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 22</h2>
   <div class="act-content">
     <img src="assets/images/image-23.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 23</h2>
   <div class="act-content">
     <img src="assets/images/image-24.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 24</h2>
   <div class="act-content">
     <img src="assets/images/image-25.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 25</h2>
   <div class="act-content">
     <img src="assets/images/image-26.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 26</h2>
   <div class="act-content">
     <img src="assets/images/image-27.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 27</h2>
   <div class="act-content">
     <img src="assets/images/image-28.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 28</h2>
   <div class="act-content">
     <img src="assets/images/image-29.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 29</h2>
   <div class="act-content">
     <img src="assets/images/image-30.jpeg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 30</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-0.jpg" alt="" data-i18n-alt="act_title">
@@ -3740,7 +3770,7 @@ VIII. Заключение
     «Элита Галактики: 2000 CGT» Перед вами банкнота высшего номинала — 2000 кредитов Совета Великих Звёзд (Council of the Greatstars). Купюра выполнена в глубоком синем цвете, имитирующем бездну открытого космоса, с золотым логотипом «CGT» в центре, символизирующим планетарное единство. Уникальный серийный номер и подпись казначея подтверждают подлинность валюты. Эти деньги используются для совершения крупных сделок между звездными системами и оплаты правительственных контрактов.
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 31</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-1.jpg" alt="" data-i18n-alt="act_title">
@@ -3749,19 +3779,19 @@ VIII. Заключение
     «Валюта Первооткрывателей: Серия 1000» Это универсальные банкноты номиналом 1000 единиц, стилизованные под винтажные космические карточки. Дизайн сочетает в себе эстетику ретро-футуризма с реалистичными изображениями газовых гигантов и спиральных галактик. Название валюты «Greatstars» продублировано на английском, русском и японском языках, что делает её основным платежным средством для торговцев, туристов и исследователей во всех секторах обитаемой вселенной.
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 32</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-2.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 33</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-3.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 34</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-4.jpg" alt="" data-i18n-alt="act_title">
@@ -3771,13 +3801,13 @@ VIII. Заключение
       <div>人生の情報もあるよ！</div>
     </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 35</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_2.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Благодарственное письмо</h2>
   <div class="act-content">
     <img src="assets/images/New_21/image-5.jpg" alt="" data-i18n-alt="act_title">
@@ -3892,7 +3922,7 @@ VI. Просьба о реестровом оформлении
     </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">GreatStars: концепт небесной мегаструктуры с бессрочной движимостью</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_0.jpg" alt="" data-i18n-alt="act_title">
@@ -4057,7 +4087,7 @@ VII. Заключительное положение
     </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Свидетельство Небесного Жилища GreatStars</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_1.jpg" alt="" data-i18n-alt="act_title">
@@ -4242,37 +4272,37 @@ VII. Заключительное положение
     </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 36</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_3.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 37</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_4.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 38</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_5.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 39</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_6.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 40</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_7.jpg" alt="" data-i18n-alt="act_title">
   </div>
 </section>
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">АКТ 41</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_8.jpg" alt="" data-i18n-alt="act_title">
@@ -4367,7 +4397,7 @@ VII. Заключительное положение
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Визитки</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_123.jfif" alt="" data-i18n-alt="act_title">
@@ -4849,14 +4879,14 @@ VPS Hosting Japan Support
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Изготовление Космическо‑Звёздной Царственно‑Земной Валюты</h2>
   <div class="act-content">
     <img src="assets/images/New_img/visitki.jfif" alt="" data-i18n-alt="act_title">
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">ЕДИНЫЙ ДОКУМЕНТ ЭКОСИСТЕМЫ GREATSTARS</h2>
   <div class="act-content">
     <img src="assets/images/New_img/11111.jpg" alt="" data-i18n-alt="act_title">
@@ -5148,7 +5178,7 @@ VPS Hosting Japan Support
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">🌌 ГЕНЕРАЛЬНЫЙ РЕЕСТР КЛАСТЕРОВ GREATSTARS</h2>
   <div class="act-content">
     <img src="assets/images/New_img/22222.jpg" alt="" data-i18n-alt="act_title">
@@ -5222,7 +5252,7 @@ GreatStars (1–100) — завершённая, масштабируемая а
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">ЕДИНЫЙ ДОКУМЕНТ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/33333.jpg" alt="" data-i18n-alt="act_title">
@@ -5515,7 +5545,7 @@ GreatStars (1–100) — завершённая, масштабируемая а
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Проект GS «Деньги</h2>
   <div class="act-content">
     <img src="assets/images/New_img/new_1.jpg" alt="" data-i18n-alt="act_title">
@@ -5637,7 +5667,7 @@ GreatStars (1–100) — завершённая, масштабируемая а
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">Высшие Силы — Конституция Метасистем</h2>
   <div class="act-content">
     <img src="assets/images/New_img/kl.jfif" alt="" data-i18n-alt="act_title">
@@ -5720,7 +5750,7 @@ GreatStars (1–100) — завершённая, масштабируемая а
   </div>
 </section>
 
-<section class="act container">
+<section class="act act container">
   <h2 data-i18n="act_title">ОСНОВНОЙ УЧРЕДИТЕЛЬНЫЙ КОНСТИТУЦИОННЫЙ АКТ</h2>
   <div class="act-content">
     <img src="assets/images/New_img/end_1.jfif" alt="" data-i18n-alt="act_title">
@@ -5984,6 +6014,95 @@ XXI век
   </div>
 </section>
 
+
+
+<div id="update-popup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-icon">🚀</div>
+        <h2 class="gold-title">ВНИМАНИЕ: ГЛОБАЛЬНОЕ ОБНОВЛЕНИЕ</h2>
+        <p>Командоры GreatStars! В течение этой недели мы полностью обновим интерфейс системы. </p>
+        <p>Вас ждут новые визуальные протоколы, улучшенная навигация и расширенные возможности управления кластерами.</p>
+        <button id="close-popup" class="popup-btn">ОТЛИЧНО</button>
+    </div>
+</div>
+
 <script src="assets/js/main.js"></script>
+
+<style>
+  /* Оверлей (фон) попапа */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px); /* Размытие заднего фона сайта */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Когда попап активен */
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Контент попапа */
+.popup-content {
+    background: rgba(15, 20, 40, 0.9);
+    border: 2px solid #f1d27d;
+    box-shadow: 0 0 30px rgba(191, 149, 63, 0.5);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    transform: scale(0.7);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.popup-content p {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Кнопка "Отлично" */
+.popup-btn {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
+    color: #000;
+    border: none;
+    padding: 12px 40px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.popup-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #f1d27d;
+}
+</style>
+
+
 </body>
 </html>
