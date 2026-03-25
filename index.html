@@ -7,91 +7,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
 
-<style>
-  /* Оверлей (фон) попапа */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    
-    /* ГЛАВНОЕ ИЗМЕНЕНИЕ ТУТ */
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    /* ---------------------- */
 
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-/* Новый класс для плавной активации */
-.popup-overlay.show {
-    display: flex; /* Делаем видимым в структуре */
-}
-
-.popup-overlay.fade-in {
-    opacity: 1; /* Проявляем прозрачность */
-}
-/* Когда попап активен */
-.popup-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Контент попапа */
-.popup-content {
-    background: rgba(15, 20, 40, 0.9);
-    border: 2px solid #f1d27d;
-    box-shadow: 0 0 30px rgba(191, 149, 63, 0.5);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 500px;
-    transform: scale(0.7);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.popup-overlay.active .popup-content {
-    transform: scale(1);
-}
-
-.popup-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.popup-content p {
-    color: #e0e0e0;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-/* Кнопка "Отлично" */
-.popup-btn {
-    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
-    color: #000;
-    border: none;
-    padding: 12px 40px;
-    font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.popup-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #f1d27d;
-}
-</style>
 
 </head>
 <body>
@@ -6070,54 +5986,8 @@ XXI век
 
 
 
-<div id="update-popup" class="popup-overlay">
-    <div class="popup-content">
-        <div class="popup-icon">🚀</div>
-        <h2 class="gold-title">ВНИМАНИЕ: ГЛОБАЛЬНОЕ ОБНОВЛЕНИЕ</h2>
-        <p>Командоры GreatStars! В течение этой недели мы полностью обновим интерфейс системы. </p>
-        <p>Вас ждут новые визуальные протоколы, улучшенная навигация и расширенные возможности управления кластерами.</p>
-        <button id="close-popup" class="popup-btn">ОТЛИЧНО</button>
-    </div>
-</div>
-
 <script src="assets/js/main.js"></script>
 
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById('update-popup');
-    const closeBtn = document.getElementById('close-popup');
-
-    let viewCount = parseInt(localStorage.getItem('update_popup_views')) || 0;
-
-    if (viewCount < 2) {
-        setTimeout(() => {
-            // 1. Сначала меняем display с none на flex
-            popup.classList.add('show');
-            
-            // 2. Даем браузеру микропаузу, чтобы он "понял" изменение, 
-            // и плавно проявляем через opacity
-            setTimeout(() => {
-                popup.classList.add('fade-in');
-            }, 10); 
-            
-        }, 1500); // Показываем через 1.5 секунды после загрузки
-    }
-
-    closeBtn.addEventListener('click', () => {
-        // Плавное исчезновение
-        popup.classList.remove('fade-in');
-        
-        // Полное скрытие после завершения анимации (через 600мс)
-        setTimeout(() => {
-            popup.classList.remove('show');
-            
-            viewCount++;
-            localStorage.setItem('update_popup_views', viewCount.toString());
-        }, 600);
-    });
-});
-</script>
 
 
 </body>
